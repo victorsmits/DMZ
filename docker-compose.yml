@@ -29,8 +29,7 @@ services:
     image: nginx:alpine
     restart: always
     ports:
-      - "80:80"
-      - "443:443"
+      - 127.0.0.1:80:80
     networks:
       - nginx
       - internal-nginx
@@ -46,21 +45,6 @@ services:
       options:
         max-size: "100m"
         max-file: "2"
-
-  portainer:
-    image: portainer/portainer-ce:alpine
-    restart: always
-    networks:
-      - nginx
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock:ro
-      - .data/portainer:/data
-    logging:
-      driver: "json-file"
-      options:
-        max-size: "100m"
-        max-file: "2"
-        
 volumes:
   logs:
 
