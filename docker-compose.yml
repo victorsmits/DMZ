@@ -36,10 +36,6 @@ services:
     volumes:
       - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
       - ./nginx/conf.d/:/etc/nginx/conf.d/:ro
-      - ./nginx/ssl:/etc/ssl:ro
-      - ./aubry-front:/aubry-front
-      - ./work:/work
-      - ./cdn:/cdn
     logging:
       driver: "json-file"
       options:
