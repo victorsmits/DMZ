@@ -14,9 +14,7 @@ services:
     networks:
       - nginx
     volumes:
-      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
-      - ./nginx/conf.d/:/etc/nginx/conf.d/:ro
-      - ./technology:/technology
+      - ./nginx/nginx.conf /etc/nginx/conf.d/default.conf
     logging:
       driver: "json-file"
       options:
