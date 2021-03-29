@@ -13,7 +13,7 @@ services:
     image: nginx:alpine
     restart: always
     ports:
-      - 127.0.0.1:80:80
+      - 80:80
     networks:
       - nginx
       - internal-nginx
